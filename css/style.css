@@ -1,0 +1,64 @@
+html {
+  background: #000;
+  font-family: Helvetica;
+  font-size: 15px;
+  color: #fff;
+  margin-left: -45px;
+  margin-top: -5px;
+}
+
+ul {
+  display: block;
+  margin: 0 auto;
+}
+
+li {
+  border-radius: 4px;
+  margin-left:0px;
+  border: 1px solid #282828;
+  background: #484848;
+  list-style-type: none;
+  width: 200px;
+  height: 200px;
+  float: left;
+  text-align: center;
+  line-height: 290px;
+  -webkit-tap-highlight-color: #383838;
+}
+
+.answer {
+  background: #484848 url(../img/answer.png) 50% 30% no-repeat;
+  background-size: 100px 100px; 
+}
+
+.hangup {
+  background: #484848 url(../img/hangup.png) 50% 30% no-repeat;
+  background-size: 100px 100px; 
+}
+
+.decline {
+  background: #484848 url(../img/decline.png) 50% 35% no-repeat;
+  background-size: 80px 80px;
+}
+
+.hold {
+  background: #484848 url(../img/hold.png) 50% 30% no-repeat;
+  background-size: 100px 100px;
+}
+
+.play {
+  background: #484848 url(../img/play.png) 50% 30% no-repeat;
+  background-size: 100px 100px;
+}
+
+.mute {
+  background: #484848 url(../img/mute.png) 50% 30% no-repeat;
+  background-size: 110px 110px;
+}
+
+@media only screen and (orientation:portrait){
+  
+  li {
+    width: 186px;
+    height: 186px;
+}
