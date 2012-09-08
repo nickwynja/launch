@@ -1,10 +1,9 @@
 <?php
 
-// $p = '/Users/brain/Library/Scripts/';
-$p = '/Users/nickwynja/Sites/launch/s/';
+$p = '/Users/brain/Sites/launch/s/';
 $cmd = 'osascript ';
 
-$q = $_POST['q'];
+$q = $_GET['q'];
 
 error_log($q);
 

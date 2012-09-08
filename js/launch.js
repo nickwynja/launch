@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
   
     // Send post to server
-    $.post('http://localhost/launch/run.php', params, callback);
+    $.get('http://launch.nickwynja.com/run.php', params, 'jsonp',  callback);
   });
   
 });
