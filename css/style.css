@@ -55,7 +55,6 @@ li {
   background: #484848 url(../img/mute.png) 50% 30% no-repeat;
   background-size: 110px 110px;
 }
-
 @media only screen and (orientation:portrait){
   
   li {
