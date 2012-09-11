@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
   
     // Send post to server
-    $.post('http://10.0.1.100/run.php', params, callback);
+    $.post('http://10.0.1.100/launch/run.php', params, callback);
   });
   
 });
