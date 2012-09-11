@@ -35,11 +35,11 @@ $(document).ready(function() {
             break; 
       
           case 'mute':
-            $('li[data-action=mute]').toggleClass('muted');
+            $('li[data-action=mute]').addClass('muted');
             break;
 
           case 'unmute':
-            $('li[data-action=mute]').toggleClass('muted');          
+            $('li[data-action=mute]').removeClass('muted');          
             break;
 
         }
