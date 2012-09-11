@@ -7,10 +7,10 @@ $(document).ready(function() {
     var params = { 
       'q': $this.attr('data-action')
     };
-            
+                      
     var callback = function(response) {
       response = $.parseJSON(response);
-            
+
       if (response.status == 'true') {
         switch(response.cmd) {
 
@@ -37,6 +37,16 @@ $(document).ready(function() {
           case 'mute':
             $('li[data-action=mute]').addClass('muted');
             break;
+
+          case 'unmute':
+            $('li[data-action=mute]').removeClass('muted');          
+            break;
+            
+        }
+      }
+        
+      if (response.status == 'false') {
+        switch(response.cmd) {
 
           case 'unmute':
             $('li[data-action=mute]').removeClass('muted');          
