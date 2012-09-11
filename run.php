@@ -1,7 +1,7 @@
 <?php
 
 $q = $_POST['q'];
-$cmd = 'osascript /Users/brain/launch/s/';
+$cmd = 'osascript /Users/brain/Sites/launch/s/';
 $r = array( "status" => "true" );
 
 switch ($q) {
