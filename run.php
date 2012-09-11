@@ -1,39 +1,50 @@
 <?php
 
-$p = '/Users/brain/Sites/launch/s/';
-$cmd = 'osascript ';
-
-$q = $_GET['q'];
-
-error_log($q);
+$q = $_POST['q'];
+$cmd = 'osascript /Users/brain/launch/s/';
+$r = array( "status" => "true" );
 
 switch ($q) {
 
 	case "answer":
-    shell_exec($cmd . ' ' . $p . 'skype-answer.scpt');
-		print "true";
-		break;
-
-	case "decline":
-    shell_exec($cmd . ' ' . $p . 'skype-decline.scpt'); 
-		break;
-
+    $resp = exec("{$cmd}skype-answer.scpt");
+    if ($resp == "true") {
+      $r['cmd'] = 'hangup';
+    }
+    break;
+    
 	case "hangup":
-    shell_exec($cmd . ' ' . $p . 'skype-hangup.scpt'); 
-		break;
+    $resp = exec("{$cmd}skype-hangup.scpt");
+    if ($resp == "true") {
+      $r['cmd'] = 'answer';
+    }
+    break;
 
 	case "hold":
-    shell_exec($cmd . ' ' . $p . 'skype-hold.scpt'); 
-		break;
-
-	case "mute":
-    shell_exec($cmd . ' ' . $p . 'skype-mute.scpt'); 
-		break;
+    $resp = exec("{$cmd}skype-hold.scpt"); 
+    if ($resp == "true") {
+      $r['cmd'] = 'resume';
+    }
+    break;
 
 	case "resume":
-    shell_exec($cmd . $p . 'skype-resume.scpt'); 
-		break;
+    $resp = exec("{$cmd}skype-resume.scpt"); 
+    if ($resp == "true") {
+      $r['cmd'] = 'hold';
+    }
+    break;
 
+	case "mute":
+    $resp = exec("{$cmd}skype-mute.scpt"); 
+    if ($resp == "true") {
+      $r['cmd'] = 'mute';
+    }
+    if ($resp == "false") {
+      $r['cmd'] = 'unmute';
+    }
+    break;
   }
+
+print json_encode($r);
 
 ?>

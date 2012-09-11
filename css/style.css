@@ -3,13 +3,12 @@ html {
   font-family: Helvetica;
   font-size: 15px;
   color: #fff;
-  margin-left: -45px;
-  margin-top: -5px;
 }
 
 ul {
   display: block;
   margin: 0 auto;
+  padding: 0;
 }
 
 li {
@@ -34,6 +33,7 @@ li {
 .hangup {
   background: #484848 url(../img/hangup.png) 50% 30% no-repeat;
   background-size: 100px 100px; 
+  display: none;
 }
 
 .decline {
@@ -46,15 +46,23 @@ li {
   background-size: 100px 100px;
 }
 
-.play {
+.resume {
   background: #484848 url(../img/play.png) 50% 30% no-repeat;
   background-size: 100px 100px;
+  display: none;
 }
 
 .mute {
   background: #484848 url(../img/mute.png) 50% 30% no-repeat;
   background-size: 110px 110px;
 }
+
+.muted {
+  background: #484848 url(../img/muted.png) 50% 30% no-repeat;
+  background-size: 110px 110px;
+}
+
+
 @media only screen and (orientation:portrait){
   
   li {

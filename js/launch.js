@@ -7,17 +7,47 @@ $(document).ready(function() {
     var params = { 
       'q': $this.attr('data-action')
     };
-    
+            
     var callback = function(response) {
-      // This is the callback function
-      // Response is usually a value or json string
+      response = $.parseJSON(response);
+            
+      if (response.status == 'true') {
+        switch(response.cmd) {
+
+          case 'hangup':
+            $('li[data-action=answer]').hide();
+            $('li[data-action=hangup]').show();
+            break; 
+
+          case 'answer':
+            $('li[data-action=hangup]').hide();
+            $('li[data-action=answer]').show();
+            break; 
+
+          case 'resume':
+            $('li[data-action=hold]').hide();
+            $('li[data-action=resume]').show();
+            break; 
+
+          case 'hold':
+            $('li[data-action=resume]').hide();
+            $('li[data-action=hold]').show();
+            break; 
       
-      // Toggle a class of muted
-      $('.skype-action').toggleClass('answer');
+          case 'mute':
+            $('li[data-action=mute]').toggleClass('muted');
+            break;
+
+          case 'unmute':
+            $('li[data-action=mute]').toggleClass('muted');          
+            break;
+
+        }
+      }
     }
   
     // Send post to server
-    $.get('http://launch.nickwynja.com/run.php', params, 'jsonp',  callback);
+    $.post('http://localhost/personal/launch/run.php', params, callback);
   });
   
 });
