@@ -18,7 +18,7 @@ li {
   background: #484848;
   list-style-type: none;
   width: 199px;
-  height: 199px;
+  height: 186px;
   float: left;
   text-align: center;
   line-height: 290px;
@@ -60,12 +60,4 @@ li {
 .muted {
   background: #484848 url(../img/muted.png) 50% 30% no-repeat;
   background-size: 110px 110px;
-}
-
-
-@media only screen and (orientation:portrait){
-  
-  li {
-    width: 186px;
-    height: 186px;
 }
